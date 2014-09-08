@@ -76,12 +76,12 @@ public class Sort {
      */
     private void mergeSorting(int[] array, int l, int h) {
         // binary search
-        int m = (l + h)/2;
-        if(l < m) {
+        if(l < h) {
+            int m = (l + h)/2;
             mergeSorting(array, l, m);
             mergeSorting(array, m + 1, h);
+            merge(array, l, m, h);
         }
-        merge(array, l, m, h);
     }
 
     /**
@@ -94,11 +94,6 @@ public class Sort {
      */
     private void merge(int[] array, int l, int m, int h) {
 
-        // if m >=h just copy lower part to the result
-        // this must be checked!
-        if (m >= h || l > m) {
-            return;
-        }
         // two arrays needs to be created to store the 
         // element of array[l..m] to left one and
         // elements of array[m+1..h] to right one
