@@ -95,7 +95,7 @@ import java.util.regex.Pattern;
          String ch = scanner.next();
          assert(ch.length() == 1) : "Internal StdIn.readChar() error!";
          scanner.useDelimiter(WHITESPACE_PATTERN);
-         return ch; 
+         return ch.charAt(0);
      }
 
      /**
