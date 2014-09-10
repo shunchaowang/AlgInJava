@@ -11,35 +11,14 @@ import java.util.Scanner;
 
 public class Sort {
     
-    private final int LIMIT = 100;
     private int[] array;
 
     /**
      * Reads input from the command, terminates by a 0.
      * The maximize input is limited to 100.
      */
-    public Sort() {
-        int[] array = new int[LIMIT];
-        Scanner scanner = new Scanner(System.in);
-        int i = 0;
-
-        System.out.println("Please input the array: (terminated by 0)");
-        while(i < LIMIT) {
-            int input = scanner.nextInt();
-            if(input == 0) {
-                break;
-            }
-            array[i] = input;
-            ++i;
-        }
-
-        System.out.print("Input: ");
-        this.array = new int[i];
-        for(int j = 0; j < i; j++) {
-            this.array[j] = array[j];
-            System.out.print(this.array[j] + " ");
-        }
-        System.out.println();
+    public Sort(int[] array) {
+        this.array = array;
     }
 
     /**
@@ -129,25 +108,6 @@ public class Sort {
                 rIndex++;
             }
         }
-    }
-
-    public void print() {
-        System.out.print("Sorted: ");
-        for(int i =0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Running InsertionSort.");
-        Sort sort = new Sort();
-        sort.insertionSort();
-        sort.print();
-        System.out.println("Running MergeSort.");
-        sort = new Sort();
-        sort.mergeSort();
-        sort.print();
     }
 
 }
