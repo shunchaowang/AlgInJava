@@ -48,8 +48,7 @@ public class Mainer {
         int[] array = scanArray();
         System.out.print("Input: ");
         printArray(array);
-        Sort sort = new Sort(array);
-        sort.insertionSort();
+        Sort.insertionSort(array);
         System.out.print("Sorted: ");
         printArray(array);
         
@@ -58,8 +57,7 @@ public class Mainer {
         array = scanArray();
         System.out.print("Input: ");
         printArray(array);
-        sort = new Sort(array);
-        sort.mergeSort();
+        Sort.mergeSort(array);
         System.out.print("Sorted: ");
         printArray(array);
     }

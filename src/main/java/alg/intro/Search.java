@@ -16,6 +16,7 @@ public class Search {
      * @param l lower index of array for search
      * @param h higher index of array for search
      * @param v the element searched
+
      * @return index of the target, -1 if not found
      */
     public binarySearch(int l, int h, int v) {}

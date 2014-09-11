@@ -3,28 +3,18 @@ package alg.intro;
 import java.util.Scanner;
 
 /**
- * SortCombo.java
+ * Sort.java
  * Sort an array using insertion sort, merge sort and quick sort.
  * InsertionSort is sorted in place.
  * Merge sort is not sorted in place.
  */
 
 public class Sort {
-    
-    private int[] array;
-
-    /**
-     * Reads input from the command, terminates by a 0.
-     * The maximize input is limited to 100.
-     */
-    public Sort(int[] array) {
-        this.array = array;
-    }
 
     /**
      * Insertion sort.
      */
-    public void insertionSort() {
+    public static void insertionSort(int[] array) {
         for(int i = 1; i < array.length; i++) {
             int k = array[i];
             int j = i - 1;
@@ -39,7 +29,7 @@ public class Sort {
     /**
      * Merge sort this class.
      */
-    public void mergeSort() {
+    public static void mergeSort(int[] array) {
         int l = 0;
         int h = array.length - 1;
         mergeSorting(array, l, h);
@@ -53,7 +43,7 @@ public class Sort {
      * If l < h, recursively sorting array[l, (l+h)/2] and 
      * array[(l+h)/2 + 1, h].
      */
-    private void mergeSorting(int[] array, int l, int h) {
+    private static void mergeSorting(int[] array, int l, int h) {
         // binary search
         if(l < h) {
             int m = (l + h)/2;
@@ -71,7 +61,7 @@ public class Sort {
      * @param m medium index
      * @param h higher index
      */
-    private void merge(int[] array, int l, int m, int h) {
+    private static void merge(int[] array, int l, int m, int h) {
 
         // two arrays needs to be created to store the 
         // element of array[l..m] to left one and
