@@ -1,12 +1,21 @@
 package alg.intro;
 
 import alg.intro.Sort;
+import alg.intro.Search;
 
 import java.util.Scanner;
 
 public class Mainer {
 
     private static final int LIMIT = 100;
+
+    private static int scanInt() {
+        System.out.println("Please input an integer: ");
+        int value;
+        Scanner scanner = new Scanner(System.in);
+        value = scanner.nextInt();
+        return value;
+    }
 
     private static int[] scanArray() {
 
@@ -60,5 +69,14 @@ public class Mainer {
         Sort.mergeSort(array);
         System.out.print("Sorted: ");
         printArray(array);
+
+        // search from array
+        int target = scanInt();
+        System.out.print("Searching " + target + " from array ");
+        printArray(array);
+        int pos = Search.binarySearch(array, 0, array.length - 1, target);
+        System.out.print(target + " is at position " + pos + " of array ");
+        printArray(array);
     }
+
 }
